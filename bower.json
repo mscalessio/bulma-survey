@@ -2,7 +2,7 @@
   "name": "bulma-survey",
   "description": "Make classic checkbox and radio survey style with smileyes ",
   "main": "dist/bulma-survey.css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Alessio <msc.alessio@gmail.com> (https://wikiki.github.io/bulma-extensions/overview)"
   ],
