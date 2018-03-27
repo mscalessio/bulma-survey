@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Make classic checkbox and radio survey style with smileyes ",
   "main": "dist/bulma-survey.sass",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mscalessio/bulma-survey.git"
@@ -24,7 +21,8 @@
   },
   "homepage": "https://github.com/mscalessio/bulma-survey#readme",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "release": "gulp release"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",

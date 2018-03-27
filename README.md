@@ -6,4 +6,17 @@ Bulma's extension to display better survey radio input
 
 Documentation & Demo
 ---
-You can find the Documentation and a demo [here](https://wikiki.github.io/form/checkradio/)
+
+Here how to use in your html
+
+
+```html
+<div class="field">
+    <input class="is-survey is-bad" id="bad" type="radio" name="survey">
+    <label for="bad"><span class="icon"></span>Bad</label>
+    <input class="is-survey is-normal" id="normal" type="radio" name="survey">
+    <label for="normal"><span class="icon"></span>Normal</label>
+    <input class="is-survey is-good" id="good" type="radio" name="survey">
+    <label for="good"><span class="icon"></span>Good</label>
+</div>
+```
