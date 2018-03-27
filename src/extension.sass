@@ -1,0 +1,155 @@
+$checkbox-radius: $radius !default
+$checkbox-border: .1rem solid $grey-lighter !default
+$checkbox-block-background: $white-ter !default
+$checkradio-focus: 1px dotted $grey-light !default
+$checkradio-top-offset: 0rem !default
+
+$icon-color: $grey-lighter !default
+$stroke-width: 2px !default
+
+$icon-color-bad: $red
+$icon-color-normal: $yellow
+$icon-color-good: $green
+
+// Use a mixin to define all ratios in the same spot
+=radio-size($size)
+  $newSize: $size * 1.5
+  $height: $newSize
+  $width: $newSize
+
+  + label
+    font-size: $size
+    line-height: $newSize
+    padding-left: $size * 2
+    &::before, &::after
+      width: $width
+      height: $height
+  &.is-rtl
+    + label
+      padding-right: $size * 2
+
+.is-survey[type="radio"]
+  outline: 0
+  user-select: none
+  display: inline-block
+  position: absolute
+  opacity: 0
+
+  + label
+    position: relative
+    display: initial
+    cursor: pointer
+    vertical-align: middle
+    margin: .5em
+    padding: .2rem .5rem .2rem 0
+    border-radius: $checkbox-radius
+
+    &:hover
+      &::before
+        animation-duration: 0.4s
+        animation-fill-mode: both
+        animation-name: hover-color
+
+    &::before
+      position: absolute
+      left: 0
+      top: $checkradio-top-offset
+      content: ''
+
+  &.is-rtl
+    + label
+      margin-right: 0rem
+      margin-left: 0.5rem
+      &::before
+        left: auto
+        right: 0
+
+  &:focus
+    + label
+      &::before
+        outline: $checkradio-focus
+
+  &:hover:not([disabled])
+    + label
+      &::before
+        border-color: $primary !important
+  
+  &.is-bad
+    + label
+      &::before
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#{$icon-color}" stroke="#{$icon-color}" stroke-width="#{$stroke-width}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><circle fill="#{$icon-color}" cx="17.3" cy="17.7" r="3"/><circle fill="#{$icon-color}" cx="31.5" cy="17.7" r="3"/><path fill="#{$icon-color}" stroke="#{$icon-color}" stroke-width="#{$stroke-width}" d="M15.4 34.3a.7.7 0 0 1-.7-.7l.1-.4A11 11 0 0 1 24 28a11 11 0 0 1 9.2 5c.2.3.1.8-.2 1-.3.2-.8.1-1-.2a9.4 9.4 0 0 0-16 .1c-.1.3-.4.4-.6.4z"/></svg>');
+
+    &:checked
+      + label
+        &::before
+          background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#{$icon-color-bad}" stroke="#{$icon-color-bad}" stroke-width="#{$stroke-width}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><circle fill="#{$icon-color-bad}" cx="17.3" cy="17.7" r="3"/><circle fill="#{$icon-color-bad}" cx="31.5" cy="17.7" r="3"/><path fill="#{$icon-color-bad}" stroke="#{$icon-color-bad}" stroke-width="#{$stroke-width}" d="M15.4 34.3a.7.7 0 0 1-.7-.7l.1-.4A11 11 0 0 1 24 28a11 11 0 0 1 9.2 5c.2.3.1.8-.2 1-.3.2-.8.1-1-.2a9.4 9.4 0 0 0-16 .1c-.1.3-.4.4-.6.4z"/></svg>')
+
+  &.is-normal
+    + label
+      &::before
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#{$icon-color}" stroke="#{$icon-color}" stroke-width="#{$stroke-width}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><circle fill="#{$icon-color}" cx="17.3" cy="17.6" r="3"/><circle fill="#{$icon-color}" cx="31.4" cy="17.6" r="3"/><path fill="#{$icon-color}" stroke="#{$icon-color}" stroke-width="#{$stroke-width}" d="M15.8 35.5a.7.7 0 0 1-.7-.7c0-.3.2-.6.5-.7l18.5-6.5c.4-.1.8.1.9.4.1.4-.1.8-.4.9l-18.5 6.5-.3.1z"/></svg>');
+
+    &:checked
+      + label
+        &::before
+          background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#{$icon-color-normal}" stroke="#{$icon-color-normal}" stroke-width="#{$stroke-width}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><circle fill="#{$icon-color-normal}" cx="17.3" cy="17.6" r="3"/><circle fill="#{$icon-color-normal}" cx="31.4" cy="17.6" r="3"/><path fill="#{$icon-color-normal}" stroke="#{$icon-color-normal}" stroke-width="#{$stroke-width}" d="M15.8 35.5a.7.7 0 0 1-.7-.7c0-.3.2-.6.5-.7l18.5-6.5c.4-.1.8.1.9.4.1.4-.1.8-.4.9l-18.5 6.5-.3.1z"/></svg>')
+
+  &.is-good
+    + label
+      &::before
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#{$icon-color}" stroke="#{$icon-color}" stroke-width="#{$stroke-width}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><path fill="#{$icon-color}" stroke="#{$icon-color}" stroke-width="#{$stroke-width}" d="M24 34.6c-3.3 0-6.6-.9-9.6-2.7l-.6-.3c-.3-.2-.5-.6-.3-1s.6-.5 1-.3l.6.3a16.6 16.6 0 0 0 17.7 0l.6-.3c.3-.2.8-.1 1 .2.2.3.1.7-.2.9l-.6.3a17.4 17.4 0 0 1-9.6 2.9zm-3.3-15a.8.8 0 0 1-.5-.2l-2.7-2.7-2.7 2.7c-.3.3-.7.3-1 0-.3-.3-.3-.7 0-1l3.2-3.2c.3-.3.7-.3 1 0l3.2 3.2c.3.3.3.7 0 1l-.5.2zm13.1 0a.8.8 0 0 1-.5-.2l-2.7-2.7-2.7 2.7c-.3.3-.7.3-1 0-.3-.3-.3-.7 0-1l3.2-3.2c.3-.3.7-.3 1 0l3.2 3.2c.3.3.3.7 0 1l-.5.2z"/></svg>');
+
+    &:checked
+      + label
+        &::before
+          background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#{$icon-color-good}" stroke="#{$icon-color-good}" stroke-width="#{$stroke-width}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><path fill="#{$icon-color-good}" stroke="#{$icon-color-good}" stroke-width="#{$stroke-width}" d="M24 34.6c-3.3 0-6.6-.9-9.6-2.7l-.6-.3c-.3-.2-.5-.6-.3-1s.6-.5 1-.3l.6.3a16.6 16.6 0 0 0 17.7 0l.6-.3c.3-.2.8-.1 1 .2.2.3.1.7-.2.9l-.6.3a17.4 17.4 0 0 1-9.6 2.9zm-3.3-15a.8.8 0 0 1-.5-.2l-2.7-2.7-2.7 2.7c-.3.3-.7.3-1 0-.3-.3-.3-.7 0-1l3.2-3.2c.3-.3.7-.3 1 0l3.2 3.2c.3.3.3.7 0 1l-.5.2zm13.1 0a.8.8 0 0 1-.5-.2l-2.7-2.7-2.7 2.7c-.3.3-.7.3-1 0-.3-.3-.3-.7 0-1l3.2-3.2c.3-.3.7-.3 1 0l3.2 3.2c.3.3.3.7 0 1l-.5.2z"/></svg>')
+
+  &:checked
+    &[disabled]
+      cursor: not-allowed
+      + label
+        opacity: 0.5
+    + label
+      &::before
+        animation-name: none
+      &::after
+        display: inline-block
+
+  &[disabled]
+    cursor: not-allowed
+    + label
+      opacity: 0.5
+      cursor: not-allowed
+      &:hover,
+      &:before,
+      &:after
+        cursor: not-allowed
+
+    &:hover
+      cursor: not-allowed
+      &::before
+        animation-name: none
+
+    &::before
+      cursor: not-allowed
+
+    &::after
+      cursor: not-allowed
+
+  &.is-block
+    display: none !important
+    + label
+      width: 100% !important
+      background: $checkbox-block-background
+      color: findColorInvert( $checkbox-block-background )
+      padding-right: .75em
+      &::before
+        border: none !important
+  
+  +radio-size($size-normal)
+  &.is-small
+    +radio-size($size-small)
+  &.is-medium
+    +radio-size($size-medium)
+  &.is-large
+    +radio-size($size-large)
