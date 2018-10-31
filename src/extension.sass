@@ -12,19 +12,19 @@ $icon-color-normal: $yellow
 $icon-color-good: $green
 
 @function _buildIcon($icon)
-  $icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">#{$icon}</svg>'
+  $icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">#{$icon}</svg>'
   @return $icon
 
 @function _buildBad($param)
-  $icon: '<path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><circle fill="#{map-get($param, color)}" cx="17.3" cy="17.7" r="3"/><circle fill="#{map-get($param, color)}" cx="31.5" cy="17.7" r="3"/><path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M15.4 34.3a.7.7 0 0 1-.7-.7l.1-.4A11 11 0 0 1 24 28a11 11 0 0 1 9.2 5c.2.3.1.8-.2 1-.3.2-.8.1-1-.2a9.4 9.4 0 0 0-16 .1c-.1.3-.4.4-.6.4z"/>'
+  $icon: '<path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 464c-119.1 0-216-96.9-216-216S128.9 40 248 40s216 96.9 216 216-96.9 216-216 216zm0-152c-44.4 0-86.2 19.6-114.8 53.8-5.7 6.8-4.8 16.9 2 22.5 6.8 5.7 16.9 4.8 22.5-2 22.4-26.8 55.3-42.2 90.2-42.2s67.8 15.4 90.2 42.2c5.3 6.4 15.4 8 22.5 2 6.8-5.7 7.7-15.8 2-22.5C334.2 339.6 292.4 320 248 320zm-80-80c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32z"/>'
   @return $icon
 
 @function _buildNormal($param)
-  $icon: '<path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><circle fill="#{map-get($param, color)}" cx="17.3" cy="17.6" r="3"/><circle fill="#{map-get($param, color)}" cx="31.4" cy="17.6" r="3"/><path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M15.8 35.5a.7.7 0 0 1-.7-.7c0-.3.2-.6.5-.7l18.5-6.5c.4-.1.8.1.9.4.1.4-.1.8-.4.9l-18.5 6.5-.3.1z"/>'
+  $icon: '<path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 464c-119.1 0-216-96.9-216-216S128.9 40 248 40s216 96.9 216 216-96.9 216-216 216zm-80-232c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160-64c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm16 160H152c-8.8 0-16 7.2-16 16s7.2 16 16 16h192c8.8 0 16-7.2 16-16s-7.2-16-16-16z"/>'
   @return $icon
 
 @function _buildGood($param)
-  $icon: '<path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M24 47a23 23 0 1 1 0-46 23 23 0 0 1 0 46zm0-44.6a21.6 21.6 0 1 0 0 43.3 21.6 21.6 0 0 0 0-43.3z"/><path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M24 34.6c-3.3 0-6.6-.9-9.6-2.7l-.6-.3c-.3-.2-.5-.6-.3-1s.6-.5 1-.3l.6.3a16.6 16.6 0 0 0 17.7 0l.6-.3c.3-.2.8-.1 1 .2.2.3.1.7-.2.9l-.6.3a17.4 17.4 0 0 1-9.6 2.9zm-3.3-15a.8.8 0 0 1-.5-.2l-2.7-2.7-2.7 2.7c-.3.3-.7.3-1 0-.3-.3-.3-.7 0-1l3.2-3.2c.3-.3.7-.3 1 0l3.2 3.2c.3.3.3.7 0 1l-.5.2zm13.1 0a.8.8 0 0 1-.5-.2l-2.7-2.7-2.7 2.7c-.3.3-.7.3-1 0-.3-.3-.3-.7 0-1l3.2-3.2c.3-.3.7-.3 1 0l3.2 3.2c.3.3.3.7 0 1l-.5.2z"/>'
+  $icon: '<path fill="#{map-get($param, color)}" stroke="#{map-get($param, color)}" stroke-width="#{map-get($param, stroke)}" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 464c-119.1 0-216-96.9-216-216S128.9 40 248 40s216 96.9 216 216-96.9 216-216 216zm90.2-146.2C315.8 352.6 282.9 368 248 368s-67.8-15.4-90.2-42.2c-5.7-6.8-15.8-7.7-22.5-2-6.8 5.7-7.7 15.7-2 22.5C161.7 380.4 203.6 400 248 400s86.3-19.6 114.8-53.8c5.7-6.8 4.8-16.9-2-22.5-6.8-5.6-16.9-4.7-22.6 2.1zM168 240c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32z"/>'
   @return $icon
 
 @function icon( $icon-name, $color, $stroke-width: 0)
